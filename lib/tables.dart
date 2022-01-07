@@ -23,9 +23,6 @@ class _Winnings extends State<Winnings> {
         // in the middle of the parent.
           child: Column(
               children: <Widget>[
-                const Text(
-                  'PAYOUT',
-                ),
                 ButtonBar(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -68,109 +65,65 @@ class sanliuban extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
       border: TableBorder.all(),
-      columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(64),
-        1: FixedColumnWidth(64),
-        2: FixedColumnWidth(64),
-        3: FixedColumnWidth(64),
-      },
+      defaultColumnWidth: FixedColumnWidth(64),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
         TableRow(
-          children: <Widget>[
-            Text(
-              '台',
-            ),
-            Text(
-              'Shooter Pay',
-            ),
-            Text(
-              '自摸',
-            ),
-            Text(
-              '自摸bonus',
-            ),
-          ],
+            decoration: BoxDecoration(color: Colors.lightGreen),
+            children: [
+              Text('台',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('Shooter Pay',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('自摸',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('自摸bonus',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '1',
-            ),
-            Text(
-              '4',
-            ),
-            Text(
-              '2',
-            ),
-            Text(
-              '4',
-            ),
-          ],
+            children: [
+              Text('1', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+              Text('2', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '2',
-            ),
-            Text(
-              '7',
-            ),
-            Text(
-              '3',
-            ),
-            Text(
-              '5',
-            ),
-          ],
+            children: [
+              Text('2', textAlign: TextAlign.center),
+              Text('7', textAlign: TextAlign.center),
+              Text('3', textAlign: TextAlign.center),
+              Text('5', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '3',
-            ),
-            Text(
-              '11',
-            ),
-            Text(
-              '5',
-            ),
-            Text(
-              '7',
-            ),
-          ],
+            children: [
+              Text('3', textAlign: TextAlign.center),
+              Text('11', textAlign: TextAlign.center),
+              Text('5', textAlign: TextAlign.center),
+              Text('7', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '4',
-            ),
-            Text(
-              '20',
-            ),
-            Text(
-              '10',
-            ),
-            Text(
-              '12',
-            ),
-          ],
+            children: [
+              Text('4', textAlign: TextAlign.center),
+              Text('20', textAlign: TextAlign.center),
+              Text('10', textAlign: TextAlign.center),
+              Text('12', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              'Man',
-            ),
-            Text(
-              '40',
-            ),
-            Text(
-              '20',
-            ),
-            Text(
-              '22',
-            ),
-          ],
+            children: [
+              Text('满', textAlign: TextAlign.center),
+              Text('40', textAlign: TextAlign.center),
+              Text('20', textAlign: TextAlign.center),
+              Text('22', textAlign: TextAlign.center),
+            ]
         ),
       ],
     );
@@ -183,109 +136,65 @@ class yier extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
       border: TableBorder.all(),
-      columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(64),
-        1: FixedColumnWidth(64),
-        2: FixedColumnWidth(64),
-        3: FixedColumnWidth(64),
-      },
+      defaultColumnWidth: FixedColumnWidth(64),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
         TableRow(
-          children: <Widget>[
-            Text(
-              '台',
-            ),
-            Text(
-              'Shooter Pay',
-            ),
-            Text(
-              '自摸',
-            ),
-            Text(
-              '自摸bonus',
-            ),
-          ],
+            decoration: BoxDecoration(color: Colors.lightGreen),
+            children: [
+              Text('台',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('Shooter Pay',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('自摸',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('自摸bonus',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '1',
-            ),
-            Text(
-              '4',
-            ),
-            Text(
-              '2',
-            ),
-            Text(
-              '4',
-            ),
-          ],
+            children: [
+              Text('1', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+              Text('2', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '2',
-            ),
-            Text(
-              '8',
-            ),
-            Text(
-              '4',
-            ),
-            Text(
-              '6',
-            ),
-          ],
+            children: [
+              Text('2', textAlign: TextAlign.center),
+              Text('8', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+              Text('6', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '3',
-            ),
-            Text(
-              '16',
-            ),
-            Text(
-              '8',
-            ),
-            Text(
-              '10',
-            ),
-          ],
+            children: [
+              Text('3', textAlign: TextAlign.center),
+              Text('16', textAlign: TextAlign.center),
+              Text('8', textAlign: TextAlign.center),
+              Text('10', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '4',
-            ),
-            Text(
-              '32',
-            ),
-            Text(
-              '16',
-            ),
-            Text(
-              '18',
-            ),
-          ],
+            children: [
+              Text('4', textAlign: TextAlign.center),
+              Text('32', textAlign: TextAlign.center),
+              Text('16', textAlign: TextAlign.center),
+              Text('18', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              'Man',
-            ),
-            Text(
-              '64',
-            ),
-            Text(
-              '32',
-            ),
-            Text(
-              '34',
-            ),
-          ],
+            children: [
+              Text('满', textAlign: TextAlign.center),
+              Text('64', textAlign: TextAlign.center),
+              Text('32', textAlign: TextAlign.center),
+              Text('34', textAlign: TextAlign.center),
+            ]
         ),
       ],
     );
@@ -298,90 +207,57 @@ class nonshooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Table(
       border: TableBorder.all(),
-      columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(64),
-        1: FixedColumnWidth(64),
-        2: FixedColumnWidth(64),
-      },
+      defaultColumnWidth: FixedColumnWidth(64),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
         TableRow(
-          children: <Widget>[
-            Text(
-              '台',
-            ),
-            Text(
-              'Shooter Pay',
-            ),
-            Text(
-              'Everyone Else',
-            ),
-          ],
+            decoration: BoxDecoration(color: Colors.lightGreen),
+            children: [
+              Text('台',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('Shooter Pay',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('Everyone Else',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '1',
-            ),
-            Text(
-              '1',
-            ),
-            Text(
-              '2',
-            ),
-          ],
+            children: [
+              Text('1', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+              Text('2', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '2',
-            ),
-            Text(
-              '2',
-            ),
-            Text(
-              '4',
-            ),
-          ],
+            children: [
+              Text('2', textAlign: TextAlign.center),
+              Text('8', textAlign: TextAlign.center),
+              Text('4', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '3',
-            ),
-            Text(
-              '4',
-            ),
-            Text(
-              '8',
-            ),
-          ],
+            children: [
+              Text('3', textAlign: TextAlign.center),
+              Text('16', textAlign: TextAlign.center),
+              Text('8', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              '4',
-            ),
-            Text(
-              '8',
-            ),
-            Text(
-              '16',
-            ),
-          ],
+            children: [
+              Text('4', textAlign: TextAlign.center),
+              Text('32', textAlign: TextAlign.center),
+              Text('16', textAlign: TextAlign.center),
+            ]
         ),
         TableRow(
-          children: <Widget>[
-            Text(
-              'Man',
-            ),
-            Text(
-              '16',
-            ),
-            Text(
-              '32',
-            ),
-          ],
+            children: [
+              Text('满', textAlign: TextAlign.center),
+              Text('64', textAlign: TextAlign.center),
+              Text('32', textAlign: TextAlign.center),
+            ]
         ),
       ],
     );
