@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'dart:math';
@@ -37,14 +39,24 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _dice = 0;
+  var winds = {1:"东", 2:"南", 3: "西", 4: "北"};
+  // String one = ;
+  // String two = "南";
+  // String three = "西";
+  // String four = "北";
 
-  void _rollDice() {
+  void _rollDice(int id) {
     setState(() {
       Random random = Random();
       _dice = 0;
       for (var i = 0; i < 3; i++) {
         _dice += random.nextInt(6) + 1;
       }
+      // set winds
+      winds[id] = "东";
+      winds[(id + 1) > 4 ? id - 3 : id + 1] = "南";
+      winds[(id + 2) > 4 ? id - 2 : id + 2] = "西";
+      winds[(id + 3) > 4 ? id - 1 : id + 3] = "北";
     });
   }
 
@@ -83,10 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Transform.rotate(
                   angle: math.pi,
                   child: TextButton(
-                    onPressed: _rollDice,
-                    child: FlutterLogo(
-                      size: 60.0,
-                    ),
+                    onPressed: () => {
+                      _rollDice(4)
+                    },
+                    child: Text((winds[4]).toString()),
                   ),
                 ),
               ),
@@ -106,10 +118,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Transform.rotate(
                   angle: math.pi / 2,
                   child: TextButton(
-                    onPressed: _rollDice,
-                    child: FlutterLogo(
-                      size: 60.0,
-                    ),
+                    onPressed: () => {
+                      _rollDice(3)
+                    },
+                    child: Text((winds[3]).toString()),
                   ),
                 ),
               ),
@@ -132,10 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Transform.rotate(
                   angle: -math.pi / 2,
                   child: TextButton(
-                    onPressed: _rollDice,
-                    child: FlutterLogo(
-                      size: 60.0,
-                    ),
+                    onPressed: () => {
+                      _rollDice(1)
+                    },
+                    child: Text((winds[1]).toString()),
                   ),
                 ),
               ),
@@ -152,10 +164,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
                 child: TextButton(
-              onPressed: _rollDice,
-              child: FlutterLogo(
-                size: 60.0,
-              ),
+              onPressed: () => {
+                _rollDice(2)
+              },
+              child: Text((winds[2]).toString()),
             )),
             Container(
               color: Colors.purple,
