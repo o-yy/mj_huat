@@ -40,10 +40,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _dice = 0;
   var winds = {1:"东", 2:"南", 3: "西", 4: "北"};
-  // String one = ;
-  // String two = "南";
-  // String three = "西";
-  // String four = "北";
+  int counter = 0;
 
   void _rollDice(int id) {
     setState(() {
@@ -57,6 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
       winds[(id + 1) > 4 ? id - 3 : id + 1] = "南";
       winds[(id + 2) > 4 ? id - 2 : id + 2] = "西";
       winds[(id + 3) > 4 ? id - 1 : id + 3] = "北";
+      // show who's counting
+      counter = (id - 1 + _dice) % 4;
+      counter == 0 ? counter = 4 : counter;
+      //winds[counter == 0 ? 4 : counter] = "*";
     });
   }
 
@@ -96,9 +97,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   angle: math.pi,
                   child: TextButton(
                     onPressed: () => {
-                      _rollDice(4)
+                      _rollDice(2)
                     },
-                    child: Text((winds[4]).toString()),
+                    child: Card(
+                      child: Text(
+                      (winds[2]).toString(),
+                      ),
+                    color: counter == 2 ? Colors.red : Colors.transparent,
+                    ),
                   ),
                 ),
               ),
@@ -121,7 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () => {
                       _rollDice(3)
                     },
-                    child: Text((winds[3]).toString()),
+                    child: Card(
+                      child: Text(
+                        (winds[3]).toString(),
+                      ),
+                      color: counter == 3 ? Colors.red : Colors.transparent,
+                    ),
                   ),
                 ),
               ),
@@ -147,7 +158,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () => {
                       _rollDice(1)
                     },
-                    child: Text((winds[1]).toString()),
+                    child: Card(
+                      child: Text(
+                        (winds[1]).toString(),
+                      ),
+                      color: counter == 1 ? Colors.red : Colors.transparent,
+                    ),
                   ),
                 ),
               ),
@@ -165,9 +181,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
                 child: TextButton(
               onPressed: () => {
-                _rollDice(2)
+                _rollDice(4)
               },
-              child: Text((winds[2]).toString()),
+                  child: Card(
+                    child: Text(
+                      (winds[4]).toString(),
+                    ),
+                    color: counter == 4 ? Colors.red : Colors.transparent,
+                  ),
             )),
             Container(
               color: Colors.purple,
