@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Random random = Random();
       _dice = 0;
       for (var i = 0; i < 3; i++) {
-        _dice += random.nextInt(7);
+        _dice += random.nextInt(6) + 1;
       }
     });
   }
