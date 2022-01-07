@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'dart:math';
 import 'tables.dart';
 
@@ -49,55 +50,123 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const Winnings(title: 'Winnings',)),
-                );
-              },
-              icon: const Icon(Icons.list)
-          )
-        ],
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You rolled a:',
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (_) => const Winnings(
+                              title: 'Winnings',
+                            )),
+                  );
+                },
+                icon: const Icon(Icons.list))
+          ],
+        ),
+        body: Column(children: <Widget>[
+          Row(
+            //ROW 1
+            children: [
+              Container(
+                color: Colors.orange,
+                margin: EdgeInsets.all(25.0),
+                child: FlutterLogo(
+                  size: 60.0,
+                ),
+              ),
+              Expanded(
+                child: Transform.rotate(
+                  angle: math.pi,
+                  child: TextButton(
+                    onPressed: _rollDice,
+                    child: FlutterLogo(
+                      size: 60.0,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                color: Colors.purple,
+                margin: EdgeInsets.all(25.0),
+                child: FlutterLogo(
+                  size: 60.0,
+                ),
+              ),
+            ],
+          ),
+          Expanded(
+            //ROW 2
+            child: Row(children: [
+              Expanded(
+                child: Transform.rotate(
+                  angle: math.pi / 2,
+                  child: TextButton(
+                    onPressed: _rollDice,
+                    child: FlutterLogo(
+                      size: 60.0,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                  color: Colors.blue,
+                  margin: EdgeInsets.all(25.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        'You rolled a:',
+                      ),
+                      Text(
+                        '$_dice',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    ],
+                  )),
+              Expanded(
+                child: Transform.rotate(
+                  angle: -math.pi / 2,
+                  child: TextButton(
+                    onPressed: _rollDice,
+                    child: FlutterLogo(
+                      size: 60.0,
+                    ),
+                  ),
+                ),
+              ),
+            ]),
+          ),
+          Row(// ROW 3
+              children: [
+            Container(
+              color: Colors.orange,
+              margin: EdgeInsets.all(25.0),
+              child: FlutterLogo(
+                size: 60.0,
+              ),
             ),
-            Text(
-              '$_dice',
-              style: Theme.of(context).textTheme.headline4,
+            Expanded(
+                child: TextButton(
+              onPressed: _rollDice,
+              child: FlutterLogo(
+                size: 60.0,
+              ),
+            )),
+            Container(
+              color: Colors.purple,
+              margin: EdgeInsets.all(25.0),
+              child: FlutterLogo(
+                size: 60.0,
+              ),
             ),
           ]),
         ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _rollDice,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
