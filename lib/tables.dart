@@ -69,10 +69,10 @@ class sanliuban extends StatelessWidget {
     return Table(
       border: TableBorder.all(),
       columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(128),
-        1: FixedColumnWidth(128),
-        2: FixedColumnWidth(128),
-        3: FixedColumnWidth(128),
+        0: FixedColumnWidth(64),
+        1: FixedColumnWidth(64),
+        2: FixedColumnWidth(64),
+        3: FixedColumnWidth(64),
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
@@ -184,10 +184,10 @@ class yier extends StatelessWidget {
     return Table(
       border: TableBorder.all(),
       columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(128),
-        1: FixedColumnWidth(128),
-        2: FixedColumnWidth(128),
-        3: FixedColumnWidth(128),
+        0: FixedColumnWidth(64),
+        1: FixedColumnWidth(64),
+        2: FixedColumnWidth(64),
+        3: FixedColumnWidth(64),
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
@@ -299,10 +299,9 @@ class nonshooter extends StatelessWidget {
     return Table(
       border: TableBorder.all(),
       columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(128),
-        1: FixedColumnWidth(128),
-        2: FixedColumnWidth(128),
-        3: FixedColumnWidth(128),
+        0: FixedColumnWidth(64),
+        1: FixedColumnWidth(64),
+        2: FixedColumnWidth(64),
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: const <TableRow>[
