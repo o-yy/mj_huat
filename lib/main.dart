@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Mahjong :D',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'HUAT AH'),
     );
   }
 }
@@ -65,13 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          backgroundColor: Colors.red,
           actions: [
             IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                         builder: (_) => const Winnings(
-                              title: 'Winnings',
+                              title: 'Payout',
                             )),
                   );
                 },
@@ -100,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Card(
                               child: Text(
                                 (winds[2]).toString(),
-                                style: TextStyle(fontSize: 90),
+                                style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.055),
                               ),
                               color:
                                   counter == 2 ? Colors.red : Colors.grey[300],
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Card(
                               child: Text(
                                 (winds[3]).toString(),
-                                style: TextStyle(fontSize: 90),
+                                style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.055),
                               ),
                               color:
                                   counter == 3 ? Colors.red : Colors.grey[300],
@@ -157,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Card(
                               child: Text(
                                 (winds[1]).toString(),
-                                style: TextStyle(fontSize: 90),
+                                style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.055),
                               ),
                               color:
                                   counter == 1 ? Colors.red : Colors.grey[300],
@@ -180,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Card(
                           child: Text(
                             (winds[4]).toString(),
-                            style: TextStyle(fontSize: 90),
+                            style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.055),
                           ),
                           color: counter == 4 ? Colors.red : Colors.grey[300],
                         ),
