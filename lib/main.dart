@@ -37,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _dice = 0;
   var winds = {1: "东", 2: "南", 3: "西", 4: "北"};
+  String everyoneWind = "东";
   int counter = 0;
 
   void _rollDice(int id) {
@@ -58,6 +59,30 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _changeWind() {
+    setState(() {
+      switch(everyoneWind) {
+        case "东": {
+          everyoneWind = "南";
+        }
+        break;
+        case "南": {
+          everyoneWind = "西";
+        }
+        break;
+        case "西": {
+          everyoneWind = "北";
+        }
+        break;
+
+        case "北": {
+          everyoneWind = "东";
+        }
+        break;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,6 +92,11 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
           backgroundColor: Colors.red,
           actions: [
+            TextButton(
+                onPressed: _changeWind,
+                child: Text(everyoneWind,
+                  style: TextStyle(fontSize: 30, color: Colors.black),
+            ),),
             IconButton(
                 onPressed: () {
                   Navigator.of(context).push(
